@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js"
+      integrity="sha512-L6Z/YtIPQ7eU3BProP34WGU5yIRk7tNHk7vaC2dB1Vy1atz6wl9mCkTPPZ2Rn1qPr+vY2mZ9odZLdGYuaBk7dQ=="
+      crossorigin="anonymous"
+    ></script>
+
+    <button class="play-music">Oya Start</button>
+    <button class="stop-music">Biko Stop</button>
+
+    <!-------------------- BUTTONS ----------------------------------->
+
+    <div id="character">🕺</div>
+    <button onclick="startDance()">Start Dancing</button>
+    <button onclick="stopDance()">Stop Dancing</button>
+
+    <div class="button-container">
+      <button class="hitbox button-a">
+        <svg
+          width="79"
+          height="79"
+          viewBox="0 0 79 79"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="39.5"
+            cy="39.5"
+            r="36.5"
+            stroke="white"
+            stroke-width="6"
+          />
+          <text class="button_text" x="33" y="47" fill="white">A</text>
+        </svg>
+      </button>
+      <button class="hitbox button-b">
+        <svg
+          width="79"
+          height="79"
+          viewBox="0 0 79 79"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="39.5"
+            cy="39.5"
+            r="36.5"
+            stroke="white"
+            stroke-width="6"
+          />
+          <text class="button_text" x="33" y="47" fill="white">B</text>
+        </svg>
+      </button>
+    </div>
+
+    <!-------------------- DEMO SCENE ----------------------------------->
+
+    <svg
+      class="cloud cloud1"
+      viewBox="0 0 1116 428"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <ellipse cx="448" cy="168" rx="448" ry="168" fill="white" />
+      <ellipse cx="668" cy="260" rx="448" ry="168" fill="white" />
+      <path
+        d="M1066.28 313.732C1069.07 323.273 1008.16 349.474 930.237 372.252C852.312 395.031 786.88 405.761 784.091 396.219C781.302 386.677 845.261 380.754 923.186 357.976C1001.11 335.197 1063.49 304.19 1066.28 313.732Z"
+        fill="#D2E6ED"
+      />
+      <path
+        d="M597.282 211.732C600.071 221.273 539.162 247.474 461.237 270.252C383.312 293.031 317.88 303.761 315.091 294.219C312.302 284.677 376.261 278.754 454.186 255.976C532.11 233.197 594.493 202.19 597.282 211.732Z"
+        fill="#D2E6ED"
+      />
+    </svg>
+
+    <svg
+      class="cloud cloud2"
+      viewBox="0 0 1116 428"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <ellipse cx="448" cy="168" rx="448" ry="168" fill="white" />
+      <ellipse cx="668" cy="260" rx="448" ry="168" fill="white" />
+      <path
+        d="M1066.28 313.732C1069.07 323.273 1008.16 349.474 930.237 372.252C852.312 395.031 786.88 405.761 784.091 396.219C781.302 386.677 845.261 380.754 923.186 357.976C1001.11 335.197 1063.49 304.19 1066.28 313.732Z"
+        fill="#D2E6ED"
+      />
+      <path
+        d="M597.282 211.732C600.071 221.273 539.162 247.474 461.237 270.252C383.312 293.031 317.88 303.761 315.091 294.219C312.302 284.677 376.261 278.754 454.186 255.976C532.11 233.197 594.493 202.19 597.282 211.732Z"
+        fill="#D2E6ED"
+      />
+    </svg>
+
+    <svg
+      class="music-note"
+      viewBox="0 0 75 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M15 6.23511L69.7865 0.106445L70.8395 9.5196L70 9.61351V43.2269L74.5266 56.1264L55.5213 62.7955L50.9082 49.6492L65 44.7043V10.1728L21 15.0949V43.0324L21.1488 42.9802L25.762 56.1265L5.46861 63.2476L0.855469 50.1013L16 44.787V15.1745L15 6.23511Z"
+        fill="black"
+      />
+    </svg>
+
+    <div class="ground"></div>
+
+    <div class="character"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

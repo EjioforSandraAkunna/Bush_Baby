@@ -1,0 +1,184 @@
+:root {
+  --background: #970fa3;
+  --grass: #ffdb58;
+  --red: #000000;
+  --red-pressed: red;
+  --blue: #000000;
+  --blue-pressed: blue;
+  --white: #fff;
+  --white-pressed: #fbff27;
+  --button-size: 78px;
+  --character-size: 250px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--background);
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  font-family: "Roboto Mono";
+}
+.ground {
+  background: var(--grass);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40vh;
+}
+.cloud {
+  width: 200px;
+  height: auto;
+  display: block;
+  position: absolute;
+}
+
+.cloud1 {
+  top: 23vh;
+  left: 10vw;
+}
+.cloud2 {
+  top: 8vh;
+  right: 23vw;
+}
+.music-note {
+  position: absolute;
+  width: 7vw;
+  left: 54vw;
+  top: 37vh;
+}
+.music-note path {
+  fill: #d9f1fb;
+}
+
+.dpad-container,
+.button-container {
+  position: fixed;
+  z-index: 2;
+  width: calc(var(--button-size) * 2.6);
+  height: calc(var(--button-size) * 2.6);
+}
+.button-container {
+  position: fixed;
+  right: 0;
+}
+
+.button_text {
+  font-family: "Roboto Mono";
+  font-weight: bold;
+  font-size: 22px;
+}
+
+button {
+  position: relative;
+  cursor: pointer;
+}
+button.hitbox {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 0;
+  padding: 0;
+  background: rgba(255, 255, 255, 0);
+}
+
+button:focus {
+  outline: 0;
+  /* We put the cue back using SVG paths */
+}
+
+button > svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.button-a,
+.button-b {
+  position: absolute;
+  left: 20px;
+  top: 20%;
+  height: 79px;
+  width: 79px;
+}
+
+.button-a svg {
+  fill: #c31c2f;
+}
+.button-b svg {
+  fill: #2f7ed6;
+}
+
+.button-b {
+  left: 110px;
+  top: 35%;
+}
+
+.button-a svg,
+.button-a circle {
+  stroke: var(--red);
+}
+.button-b svg,
+.button-b circle {
+  stroke: var(--blue);
+}
+
+#character {
+  font-size: 60px;
+  transition: transform 0.2s;
+  position: absolute;
+}
+
+@keyframes dance {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.character {
+  background: url("https://assets.codepen.io/21542/TutorialWalkingVectorCharacterSheet.png")
+    no-repeat no-repeat;
+  height: var(--character-size);
+  width: var(--character-size);
+  position: absolute;
+  left: calc(50vw - var(--character-size) / 2);
+  top: 56vh;
+}
+.character.walking {
+  animation: walkAnimation 0.4s steps(4) infinite;
+}
+.character.pushing {
+  animation: pushAnimation 0.6s ease-in-out;
+}
+
+@keyframes walkAnimation {
+  from {
+    background-position-x: 0%;
+  }
+  to {
+    background-position-x: calc(var(--character-size) * -4);
+  }
+}
+
+@keyframes pushAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(40%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
