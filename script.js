@@ -1,3 +1,4 @@
+// Creating sound effect
 var sfx = {
   push: new Howl({
     src: ["https://assets.codepen.io/21542/howler-push.mp3"],
@@ -10,15 +11,16 @@ var sfx = {
     },
   }),
 };
-
+//Calling my chracter ID from HTML
 var character = document.getElementById("character");
 var dancingInterval;
-
+//this function sets the chracters on motion
 function startDance() {
   dancingInterval = setInterval(function () {
     character.style.animation = "dance 1s infinite";
   }, 1000);
 }
+//this function sets the chracters to stop
 
 function stopDance() {
   clearInterval(dancingInterval);
@@ -50,18 +52,18 @@ class Character {
   }
 
   boost() {
-    if (this.element.classList.contains("walking")) {
+    if (this.element.classList.contains("walking is infinite")) {
       return;
     }
 
     sfx.boost.play();
     this.element.classList.add("walking");
     setTimeout(() => {
-      this.element.classList.remove("walking");
+      this.element.classList.remove("walking is infinite");
     }, 1000);
   }
 }
-
+//Adding EventListeners to the buttons
 //Init
 (function () {
   var player = new Character(document.querySelector(".character"));
